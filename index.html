@@ -1,0 +1,268 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>Amir's Portfolio Website</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        /* Add this style to center the "Access Project" buttons */
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+        }
+
+        .button-wrapper a {
+            margin: 0 1em;
+        }
+
+        /* Add this style to reduce image size and add border */
+        #logo img {
+            max-width: 15%;
+            height: auto;
+            border: 2px solid #333;
+            border-radius: 50%;
+            padding: 5px;
+        }
+
+        /* Add eye-catching smooth transition for "Explore Projects" */
+        .explore-projects-button {
+            transition: transform 0.5s ease;
+        }
+
+        .explore-projects-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Apply the smooth transition for "Explore Projects" on click */
+        .explore-projects-button.clicked {
+            transform: scale(1.1);
+        }
+
+        /* Remove transition for "Access Project" */
+        .button-wrapper a.access-project-button {
+            transition: none !important;
+        }
+
+        /* Decrease image size for projects and center them */
+        .project-image {
+            max-width: 50%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 1em;
+            transition: transform 0.3s ease;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Add hover effect for project images */
+        .project-image:hover {
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+
+<body class="homepage is-preload">
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header" class="wrapper visible">
+            <div id="logo">
+                <!-- Add your image here -->
+                <img src="images/myimage.jpg" alt="Your Image" />
+                <h1><a href="index.html">Amir Razvi's Portfolio</a></h1>
+                <p>An enthusiastic Masters Student aspiring to build a career as a Data Analyst</p>
+                <a href="https://www.linkedin.com/in/amir-ahmed-razvi-syed-9b13231aa/">@Amir_Razvi</a>
+            </div>
+            <nav id="nav">
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="#">Projects</a>
+                        <ul>
+                            <li><a href="javascript:void(0);" onclick="handleProjectDropdown('project1')">Breast Cancer Breakdown</a></li>
+                            <li><a href="javascript:void(0);" onclick="handleProjectDropdown('project2')">Occupation Survey</a></li>
+                            <li><a href="javascript:void(0);" onclick="handleProjectDropdown('project3')">Sales Data</a></li>
+                            <li><a href="javascript:void(0);" onclick="handleProjectDropdown('project4')">Crypto Analysis</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#aboutMe">About Me</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- Intro -->
+        <section id="intro" class="wrapper style1 visible">
+            <div class="title">Welcome to My Data Analytics Portfolio</div>
+            <div class="container">
+                <p class="style1">Hello! I'm Amir Razvi, a dedicated and detail-oriented Masters Student with a passion for transforming data into actionable insights. This portfolio showcases my journey as a Data Analyst, highlighting impactful projects that leverage data to drive informed decision-making.</p>
+                <p class="style1">
+                    As a data enthusiast, my interest is to efficiently use data visualization tools. Each project reflects my commitment to providing meaningful solutions, whether in healthcare analytics, occupational surveys, sales data analysis, or cryptocurrency market insights.
+                </p>
+                <p class="style3">Feel free to explore my projects, and if you have any inquiries or opportunities, connect with me on <a href="https://www.linkedin.com/in/amir-ahmed-razvi-syed-9b13231aa/" style="font-size: 90%;">LinkedIn</a>.</p>
+                <ul class="actions">
+                    <li><a href="#project3" class="button style3 large explore-projects-button" onclick="handleExploreProjects()">Explore Projects</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Main -->
+        <section id="main" class="wrapper style2 visible">
+            <div class="title">My Projects</div>
+            <div class="container">
+
+                <!-- Project 1 - Breast cancer breakdown dashboard -->
+                <section id="project1" class="visible">
+                    <header class="style1">
+                        <h2>Breast Cancer Breakdown Dashboard</h2>
+                        <br>
+                        <a href="https://app.powerbi.com/groups/me/reports/c8f8ba4b-5387-42db-80fd-3bc33d50015c/ReportSection?experience=power-bi" class="image featured">
+                            <img src="images/breast_cancer_project.png" alt="Breast Cancer Dashboard Image" class="project-image center-image" />
+                        </a>
+                        <!-- Add project details here -->
+                        <p>In response to the crucial requirement stated by Dr. Hafsa,
+                            a dedicated medical professional at Osmania Hospital,
+                            the Breast Cancer Visualization project seeks to improve interpretation of breast cancer data through complete visual dashboards.
+                            The project makes use of a dataset collected from Kaggle, and its development involves painstaking data cleaning in Microsoft Excel,
+                            including sophisticated tools such as Power Query. The ultimate objective is to give superior visual insights for breast cancer patients,
+                            allowing them to make more educated treatment decisions.</p>
+
+                        <!-- Add more project-specific details here -->
+                        <!-- Button to access the project -->
+                        <div class="button-wrapper">
+                            <a href="https://github.com/Amir-Razvi/Breast-Cancer-Data-Visualization" class="button style3 access-project-button" onclick="scrollToSection('#project1')">Access Project</a>
+                        </div>
+                    </header>
+                </section>
+                <hr>
+                <!-- Project 2 - Occupation Survey dashboard -->
+                <section id="project2" class="visible">
+                    <header class="style1">
+                        <h2>Occupation Survey Dashboard</h2>
+                        <br>
+                        <a href="https://app.powerbi.com/groups/me/reports/45b823d7-ef7a-41f1-b0fe-e74f98cc8e5d/ReportSection?experience=power-bi" class="image featured">
+                            <img src="images/occupation_survey_image.jpg" alt="Occupation Survey Dashboard Image" class="project-image center-image" />
+                        </a>
+                        <!-- Add project details here -->
+                        <p>This Occupational Survey Dashboard examines data-driven professional occupations such as data analysts,
+                            engineers, architects, and administrators. It uses Excel and Power BI to investigate gender income disparities,
+                            entrance hurdles, preferred languages, wage distributions, and work satisfaction.</p>
+
+                        <!-- Add more project-specific details here -->
+                        <!-- Button to access the project -->
+                        <div class="button-wrapper">
+                            <a href="https://github.com/Amir-Razvi/Occupation-Survey" class="button style3 access-project-button" onclick="scrollToSection('#project2')">Access Project</a>
+                        </div>
+                    </header>
+                </section>
+                <hr>
+                <!-- Project 3 - Sales data dashboard -->
+                <section id="project3" class="visible">
+                    <header class="style1">
+                        <h2>Sales Data Dashboard</h2>
+                        <br>
+                        <a href="https://app.powerbi.com/groups/me/reports/a36d5142-83f1-4dfb-9fa6-0226d19e68a8/ReportSection?experience=power-bi" class="image featured">
+                            <img src="images/Sales_data.png" alt="Sales Data Dashboard Image" class="project-image center-image" />
+                        </a>
+
+                        <!-- Add project details here -->
+                        <p>This Sales Analysis Dashboard is a powerful tool that provides a thorough overview of
+                            sales data by utilizing Microsoft SQL Server for rapid data cleansing and Power BI for dynamic presentation. This project focuses on essential business characteristics such as sales trends, budget comparisons,
+                            product category performance, top customers, and best-selling items.</p>
+
+                        <!-- Add more project-specific details here -->
+                        <!-- Button to access the project -->
+                        <div class="button-wrapper">
+                            <a href="https://github.com/Amir-Razvi/Sales-Data" class="button style3 access-project-button" onclick="scrollToSection('#project3')">Access Project</a>
+                        </div>
+                    </header>
+                </section>
+
+                <hr>
+                <!-- Project 4 - Crypto Analysis dashboard -->
+                <section id="project4" class="visible">
+                    <header class="style1">
+                        <h2>Crypto Analysis Dashboard</h2>
+                        <br>
+                        <a href="https://github.com/Amir-Razvi/CryptoCurrency-API-Visualization" class="image featured">
+                            <img src="images/Crypto_image.jpg" alt="Crypto Analysis Dashboard Image" class="project-image center-image" />
+                        </a>
+                        <!-- Add project details here -->
+                        <p>I used Python and Pandas in the Anaconda environment to undertake a thorough analysis of cryptocurrency data obtained from a well-known website's API. The project includes data cleansing, research, and visualization, which provided important insights into key variables including price fluctuations and market capitalization patterns.
+
+                            This task involves extracting real-time and historical data, which allowed for the construction of informative charts and interactive dashboards with Matplotlib and Seaborn. This project is aimed at investors and enthusiasts, providing a brief yet thorough overview of cryptocurrency market dynamics to help in strategic decision-making.</p>
+
+                        <!-- Add more project-specific details here -->
+                        <!-- Button to access the project -->
+                        <div class="button-wrapper">
+                            <a href="https://github.com/Amir-Razvi/CryptoCurrency-API-Visualization" class="button style3 access-project-button" onclick="scrollToSection('#project4')">Access Project</a>
+                        </div>
+                    </header>
+                </section>
+
+                <!-- About Me Section -->
+                <section id="aboutMe" class="visible" style="background-color: #f5f5f5; padding: 3em;">
+                    <header class="style1">
+                        <h2 style="color: #333;">About Me</h2>
+                        <div class="about-me-details" style="color: #555;">
+                            <p><strong>Name:</strong> <span style="color: #333;">Amir Ahmed Razvi Syed</span></p>
+                            <p><strong>Email:</strong> <span style="color: #333;">baseerahmedrazvi@gmail.com</span></p>
+                            <p><strong>Phone No:</strong> <span style="color: #333;">+1 (807)-707-7348</span></p>
+                            <p><strong>Mailing Address:</strong> <span style="color: #333;">2-211 Southern Ave, P7C2T6, Thunder Bay, CA</span></p>
+                        </div>
+                    </header>
+                </section>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        // Function to handle the "Explore Projects" button click
+        function handleExploreProjects() {
+            const exploreButton = document.querySelector('.explore-projects-button');
+            exploreButton.classList.add('clicked');
+            
+            // Smooth scroll to the projects section using jQuery
+            $('html, body').animate({
+                scrollTop: $('#main').offset().top
+            }, 800);
+        }
+
+        // Function to handle the "Access Project" button click for each project
+        function scrollToSection(sectionId) {
+            // Smooth scroll to the specified section using jQuery
+            $('html, body').animate({
+                scrollTop: $(sectionId).offset().top
+            }, 800);
+        }
+
+        // Function to handle the project dropdown menu clicks
+        function handleProjectDropdown(projectId) {
+            // Smooth scroll to the selected project section using jQuery
+            scrollToSection('#' + projectId);
+
+            // Close the dropdown menu if needed (adjust selector accordingly)
+            // For example, if you have a Bootstrap dropdown, you can use:
+            // $('.navbar-collapse').collapse('hide');
+        }
+    </script>
+    
+</body>
+
+</html>
